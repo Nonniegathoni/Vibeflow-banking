@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Adjust to ES2020 or later
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext", // ESNext for full ES module support
+    "moduleResolution": "node", // Use "node" resolution for ES modules
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "backend/dbSync.mts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "backend"
+  ]
+}
