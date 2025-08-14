@@ -1,14 +1,15 @@
 import { Pool } from "pg"
 
-const dbHost = process.env.DB_HOST;
-const useSSL = dbHost?.includes("render.com");
+// Neon database configuration
+const dbHost = "ep-tiny-snow-a2dpd0fn-pooler.eu-central-1.aws.neon.tech";
+const useSSL = dbHost?.includes("render.com") || dbHost?.includes("neon.tech");
 
 const pool = new Pool({
-  user: process.env.DB_USER,
+  user: "neondb_owner",
   host: dbHost,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: parseInt(process.env.DB_PORT || "5432", 10),
+  database: "neondb",
+  password: "npg_43VHrdvtDTbK",
+  port: 5432,
 
   // Connection settings
   max: 20,

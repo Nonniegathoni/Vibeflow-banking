@@ -12,10 +12,10 @@ from typing import List, Dict, Any, Optional
 # Load environment variables
 load_dotenv()
 
-DB_NAME = "vibeflow_b3jd"
-DB_USER = "viber"
-DB_PASSWORD = "1SnuIVB9PleqpJjQe3IrX5P4mztADQs8"
-DB_HOST = "dpg-d1puu6c9c44c73924l00-a.oregon-postgres.render.com"
+DB_NAME = "neondb"
+DB_USER = "neondb_owner"
+DB_PASSWORD = "npg_43VHrdvtDTbK"
+DB_HOST = "ep-tiny-snow-a2dpd0fn-pooler.eu-central-1.aws.neon.tech"
 DB_PORT = "5432"
 # Database connection parameters
 # DB_NAME = os.getenv('DB_NAME')
@@ -79,7 +79,8 @@ def get_connection(max_retries=3, retry_delay=5):
                 password=DB_PASSWORD,
                 host=DB_HOST,
                 port=DB_PORT,
-                connect_timeout=10
+                connect_timeout=10,
+                sslmode='require'
             )
             return conn
         except OperationalError as e:

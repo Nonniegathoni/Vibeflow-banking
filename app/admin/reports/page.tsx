@@ -327,7 +327,7 @@ export default function ReportsPage() {
               data={reports.daily_tickets}
               dataKey="count"
               nameKey="name"
-              onFilter={(value) => setFilters({ ...filters, search: value })}
+              onFilter={(value: string | number) => setFilters({ ...filters, search: String(value) })}
             />
           </CardContent>
         </Card>
@@ -341,7 +341,7 @@ export default function ReportsPage() {
               data={reports.status_distribution}
               dataKey="value"
               nameKey="name"
-              onFilter={(value) => setFilters({ ...filters, status: value })}
+              onFilter={(value: string | number) => setFilters({ ...filters, status: String(value) })}
             />
           </CardContent>
         </Card>

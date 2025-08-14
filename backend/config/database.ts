@@ -3,22 +3,14 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const dbName = process.env.DB_NAME as string;
-const dbUser = process.env.DB_USER as string;
-const dbHost = process.env.DB_HOST;
-const dbPassword = process.env.DB_PASSWORD as string;
-const dbPort = process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 5432;
+// Neon database configuration
+const dbName = "neondb";
+const dbUser = "neondb_owner";
+const dbHost = "ep-tiny-snow-a2dpd0fn-pooler.eu-central-1.aws.neon.tech";
+const dbPassword = "npg_43VHrdvtDTbK";
+const dbPort = 5432;
 
-if (!dbName || !dbUser || !dbPassword || !dbHost) {
-  console.error(
-    "FATAL ERROR: Database configuration environment variables (DB_NAME, DB_USER, DB_PASSWORD, DB_HOST) are missing!"
-  );
-  throw new Error(
-    "Missing essential database configuration in environment variables."
-  );
-}
-
-const useSSL = dbHost?.includes("render.com");
+const useSSL = dbHost?.includes("render.com") || dbHost?.includes("neon.tech");
 
 const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
   host: dbHost,

@@ -23,9 +23,9 @@ const createAuthHeaders = (): HeadersInit => {
 };
 
 
-import { Transaction } from "@/types";
+import { ApiTransaction } from "@/types";
 
-export const getTransactions = async (limit = 10, offset = 0, sort = 'date', order = 'desc'): Promise<Transaction[]> => {
+export const getTransactions = async (limit = 10, offset = 0, sort = 'date', order = 'desc'): Promise<ApiTransaction[]> => {
     const token = getAuthToken();
     if (!token) {
         throw new Error("Unauthorized: No token found.");

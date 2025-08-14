@@ -2,11 +2,11 @@ import psycopg2
 import time
 from psycopg2 import OperationalError
 
-# Database connection parameters
-DB_NAME = "vibeflow_b3jd"
-DB_USER = "viber"
-DB_PASSWORD = "1SnuIVB9PleqpJjQe3IrX5P4mztADQs8"
-DB_HOST = "dpg-d1puu6c9c44c73924l00-a.oregon-postgres.render.com"
+# Database connection parameters - Neon
+DB_NAME = "neondb"
+DB_USER = "neondb_owner"
+DB_PASSWORD = "npg_43VHrdvtDTbK"
+DB_HOST = "ep-tiny-snow-a2dpd0fn-pooler.eu-central-1.aws.neon.tech"
 DB_PORT = "5432"
 def get_connection(max_retries=3, retry_delay=5):
     for attempt in range(max_retries):
